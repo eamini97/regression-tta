@@ -92,7 +92,8 @@ def main(args):
 
 def create_optimizer(net: Regressor,
                      config: dict[str, Any]) -> Optimizer:
-    match p := config["optimizer"]["param"]:
+    p = config["optimizer"]["param"]
+    match p:
         case "all":
             param = net.parameters()
         case _:
